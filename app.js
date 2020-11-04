@@ -77,7 +77,7 @@ app.post("/", function(req, res) {
   const newItem = new Items({
     name: itemName
   });
-  
+
   if(listName === "Today") {
     newItem.save();
 
@@ -154,6 +154,6 @@ app.get("/:customListName", function(req,res){
   // });
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT||3000, function() {
   console.log("Server started on port 3000");
 });
